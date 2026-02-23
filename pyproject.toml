@@ -1,0 +1,35 @@
+[project]
+name = "api-governor"
+version = "0.1.0"
+description = "AI-augmented OpenAPI governance and linting engine"
+authors = [
+    { name = "Soumyadeep Basu" }
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn>=0.27.0",
+    "jinja2>=3.1.2",
+    "python-multipart>=0.0.9",
+    "pyyaml>=6.0",
+    "openapi-spec-validator>=0.7.1",
+    "pydantic>=2.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "ruff"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+
+[tool.ruff]
+line-length = 88

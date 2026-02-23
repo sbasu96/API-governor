@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/analyze" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <br><br>
+    <label>
+        <input type="checkbox" name="ai_enabled">
+        Enable AI Semantic Review
+    </label>
+    <br><br>
+    <button type="submit">Analyze</button>
+</form>
+{% endblock %}

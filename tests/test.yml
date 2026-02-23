@@ -1,0 +1,23 @@
+openapi: 3.0.0
+
+info:
+  title: Dummy API
+  version: 1.0   # ❌ Float instead of string (triggers structural + invalid_semver)
+
+paths:
+
+  /users:
+    get:
+      operationId: get_users   # ❌ Not camelCase (triggers operationId_format)
+      description: Retrieve users
+      responses:
+        "200":
+          description: OK
+
+  /createUser:   # ❌ Verb in path (triggers rest_anti_pattern)
+    post:
+      responses:
+        "201":
+          description: Created
+      # ❌ missing operationId (triggers missing_operationId)
+      # ❌ missing description (triggers missing_description)

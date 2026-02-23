@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: api-governor
+Version: 0.1.0
+Summary: AI-augmented OpenAPI governance and linting engine
+Author: Soumyadeep Basu
+Requires-Python: >=3.10
+Requires-Dist: fastapi>=0.110.0
+Requires-Dist: uvicorn>=0.27.0
+Requires-Dist: jinja2>=3.1.2
+Requires-Dist: python-multipart>=0.0.9
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: openapi-spec-validator>=0.7.1
+Requires-Dist: pydantic>=2.6.0
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: ruff; extra == "dev"

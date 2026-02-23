@@ -1,0 +1,36 @@
+annotated-doc==0.0.4
+annotated-types==0.7.0
+anyio==4.12.1
+# Editable install with no version control (api-governor==0.1.0)
+-e c:\users\soumyadeep_basu\onedrive - dell technologies\desktop\api_governor
+attrs==25.4.0
+certifi==2026.1.4
+charset-normalizer==3.4.4
+click==8.3.1
+colorama==0.4.6
+fastapi==0.131.0
+h11==0.16.0
+idna==3.11
+Jinja2==3.1.6
+jsonschema==4.26.0
+jsonschema-path==0.3.4
+jsonschema-specifications==2025.9.1
+lazy-object-proxy==1.12.0
+MarkupSafe==3.0.3
+openapi-schema-validator==0.6.3
+openapi-spec-validator==0.7.2
+pathable==0.4.4
+pydantic==2.12.5
+pydantic_core==2.41.5
+python-multipart==0.0.22
+PyYAML==6.0.3
+referencing==0.36.2
+requests==2.32.5
+rfc3339-validator==0.1.4
+rpds-py==0.30.0
+six==1.17.0
+starlette==0.52.1
+typing-inspection==0.4.2
+typing_extensions==4.15.0
+urllib3==2.6.3
+uvicorn==0.41.0

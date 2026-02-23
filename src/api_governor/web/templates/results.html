@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Governor</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+</head>
+<body>
+<div class="container">
+
+    <h1>AI API Governor</h1>
+
+    <!-- Structural Errors -->
+    <div class="card">
+        <div class="section-title">
+            <h2>Structural Errors</h2>
+            <span class="badge badge-error">
+                {{ structural_errors | length }}
+            </span>
+        </div>
+
+        {% if structural_errors %}
+            {% for error in structural_errors %}
+                <div class="issue">
+                    <div class="message">{{ error }}</div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty">No structural errors detected.</div>
+        {% endif %}
+    </div>
+
+    <!-- Lint Errors -->
+    <div class="card">
+        <div class="section-title">
+            <h2>Lint Errors</h2>
+            <span class="badge badge-warning">
+                {{ lint_errors | length }}
+            </span>
+        </div>
+
+        {% if lint_errors %}
+            {% for issue in lint_errors %}
+                <div class="issue">
+                    <div class="rule">{{ issue.rule }}</div>
+                    <div class="meta">
+                        {{ issue.method | upper }} {{ issue.path }}
+                    </div>
+                    <div class="message">
+                        {{ issue.message }}
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty">No lint errors detected.</div>
+        {% endif %}
+    </div>
+
+    <!-- Semantic Findings -->
+    <div class="card">
+        <div class="section-title">
+            <h2>Semantic Findings</h2>
+            <span class="badge badge-info">
+                {{ semantic_findings | length }}
+            </span>
+        </div>
+
+        {% if semantic_findings %}
+            {% for issue in semantic_findings %}
+                <div class="issue">
+                    <div class="rule">{{ issue.rule }}</div>
+
+                    {% if issue.method %}
+                        <div class="meta">
+                            {{ issue.method | upper }} {{ issue.path }}
+                        </div>
+                    {% endif %}
+
+                    <div class="message">
+                        {{ issue.message }}
+                    </div>
+
+                    {% if issue.suggested_fix %}
+                        <div class="suggestion">
+                            Suggested Fix: {{ issue.suggested_fix }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="empty">No semantic issues detected.</div>
+        {% endif %}
+    </div>
+
+    <a href="/">← Back</a>
+
+</div>
+</body>
+</html>
